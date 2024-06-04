@@ -1,0 +1,109 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer-sidenav" mode="side">
+
+    <div class="div-logo">
+      <img class="img-logo"
+           [src]="appConfig.getAppLogo()"/>
+    </div>
+    <mat-card class="card-menu-button">
+      <mat-card-content>
+        <p>{{ appConfig.getAppOwner() }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" *ngIf="isUserAdmin()" (click)="onDashboard()">
+      <mat-card-content>
+        <p>Dashboard</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" (click)="onLogOut()">
+      <mat-card-content>
+        <p>Logout</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+
+  <div class="drawer-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ appConfig.getAppName() }}</span>
+      <span class="example-spacer"></span>
+      <app-cart-button></app-cart-button>
+    </mat-toolbar>
+
+    <img class="img-banner"
+         src="https://www.infofinanciar.ro/wp-content/uploads/2022/06/masini-second-hand.jpg"/>
+    <img class="img-banner"
+         src="https://verificare-vin.ro/wp-content/uploads/2024/03/cele-mai-fiabile-masini-second-hand-in-2024.jpg"/>
+    <img class="img-banner"
+         src="https://www.startupcafe.ro/sites/default/files/styles/795x470/public/2023-11/masina-second-hand-dreamstime.jpg"/>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Welcome to {{ appConfig.getAppName() }}</mat-card-title>
+      <mat-card-content>
+
+        <div class="div-text">
+          <p>
+            Bine ați venit pe [Masini SH] - Destinația dvs. pentru Mașini Second-Hand de Calitate!
+
+            La [Masini SH], ne mândrim să oferim o experiență de cumpărare unică și de încredere pentru toți clienții noștri. Indiferent dacă sunteți în căutarea primei dvs. mașini, a unui upgrade sau a unui vehicul de familie, avem o selecție variată de mașini second-hand care să satisfacă toate nevoile și preferințele.
+            <br>
+            De ce să alegeți [Masini SH]?
+            <br>
+            Selecție Diversificată: Oferim o gamă largă de mașini de la diferite mărci și modele, toate atent verificate pentru a asigura calitatea și fiabilitatea.
+            Transparență Completă: Fiecare mașină listată pe site-ul nostru vine cu o descriere detaliată, istoricul vehiculului și fotografii de înaltă rezoluție, astfel încât să puteți lua o decizie informatată.
+            Prețuri Competitve: Ne străduim să oferim cele mai bune prețuri de pe piață, astfel încât să beneficiați de un raport excelent calitate-preț.
+            Servicii de Finanțare Flexibile: Colaborăm cu instituții financiare de încredere pentru a vă oferi opțiuni de finanțare adaptate bugetului dvs.
+            Suport Client Dedicat: Echipa noastră de experți este aici pentru a vă ghida pe tot parcursul procesului de achiziție, răspunzând tuturor întrebărilor și oferindu-vă sfaturi personalizate.
+            <br><br>
+            Cum Funcționează?
+
+            Explorați Catalogul: Navigați prin selecția noastră extinsă de mașini second-hand și folosiți filtrele noastre avansate pentru a găsi vehiculul perfect.
+            Solicitați Informații: Contactați-ne pentru mai multe detalii sau pentru a programa un test drive.
+            Achiziționați cu Încredere: Finalizați achiziția rapid și simplu, beneficiind de toate garanțiile și serviciile noastre post-vânzare.
+            Garanția Calității
+
+            Fiecare mașină disponibilă pe [Numele Site-ului] trece printr-un proces riguros de inspecție pentru a ne asigura că îndeplinește cele mai înalte standarde de performanță și siguranță. Vă oferim garanții extinse și opțiuni de returnare, astfel încât să puteți cumpăra cu încredere deplină.
+
+
+          </p>
+          <img class="img-section"
+               src="https://static.bcchauto.ro/blog/70/masini-second-hand-min.jpg"/>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Service impecabil!!!</mat-card-title>
+      <mat-card-content>
+        <div class="div-text">
+          <img class="img-section" style="margin-left: 0px !important; margin-right: 16px"
+               src="https://www.bmw.ro/content/dam/bmw/common/topics/offers-and-services/service-workshop/bmw-service-inclusive/bmw-service-inclusive-ms-service-inclusive-plus.jpg/jcr:content/renditions/cq5dam.resized.img.585.low.time1655126085493.jpg">
+
+          <p>
+            Aici, mașina dumneavoastră primește atenția și îngrijirea pe care o merită. Echipa noastră de profesioniști dedicați este mereu pregătită să vă ofere servicii de înaltă calitate, utilizând cele mai avansate tehnologii și echipamente din domeniu.
+
+            Fie că aveți nevoie de o verificare de rutină, reparații complexe sau întreținere specializată, puteți conta pe noi. Prioritatea noastră este să vă asigurăm că vehiculul dumneavoastră funcționează la capacitate maximă, oferindu-vă siguranță și încredere pe drum.
+
+            Vă mulțumim pentru încrederea acordată și vă așteptăm cu drag unde calitatea și satisfacția clientului sunt pe primul loc!
+            <br><br>
+            "Alegeți excelența pentru mașina dumneavoastră! La Service Auto Impecabil, ne asigurăm că fiecare detaliu contează. Bucurați-vă de siguranță și performanță maximă la fiecare kilometru."
+
+            "Mașina dumneavoastră merită cel mai bun tratament! La Service Auto Impecabil, profesionalismul și calitatea sunt garantate. Vă așteptăm să redescoperiți plăcerea condusului."
+
+            "Pentru noi, fiecare mașină este importantă. Veniți la Service Auto Impecabil și lăsați-vă vehiculul în mâinile experților noștri dedicați. Împreună, vom face ca fiecare călătorie să fie sigură și fără griji."
+
+            "Când vine vorba de întreținerea mașinii tale, alege perfecțiunea! La Service Auto Impecabil, ne mândrim cu servicii de top și o echipă de profesioniști pasionați de ceea ce fac."
+
+          </p>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+    <app-list-products [isAdmin]="false"></app-list-products>
+  </div>
+
+</mat-drawer-container>
+
